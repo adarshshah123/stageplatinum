@@ -1,0 +1,7 @@
+<p>
+    <div><b>{{course_fullname}}</b></div>
+    <div class="text-muted">{{#str}}issued, block_earned_certificates{{/str}} {{issueddate}}</div>
+    {{#files}}
+        <a href="{{{link}}}">{{#pix}} certificate, block_earned_certificates {{/pix}}{{filename}}</a>
+    {{/files}}
+</p>

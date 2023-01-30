@@ -1,0 +1,10 @@
+{
+  "name": "moodle-availability_certificate-form",
+  "builds": {
+    "moodle-availability_certificate-form": {
+      "jsfiles": [
+        "form.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+/********* Modal *********/
+.modal-video {
+	.modal-content {
+		background: none;
+		border: none;
+		
+	}
+	.modal-header {
+		border: none;
+		position: relative;
+		padding-top: 60px;
+		button.close {
+			text-shadow: none;
+			color: #fff;
+			position: absolute;
+			z-index:10;
+			right:14px;
+			top: 46px;
+			background: $theme-text-color-secondary;
+			width: 28px;
+			height: 28px;
+			line-height: 0;
+			padding:0;
+			text-align: center;
+			@include border-radius(50%);
+			@include opacity(1);
+			
+			&:hover {
+				background: $theme-text-color-primary;
+				@include opacity(1);
+			}
+		}
+	}
+	.modal-body {
+		padding: 30px;
+		
+	}
+}
+
+@media (min-width: 544px) {
+	.modal-video {
+		.modal-dialog {
+			max-width: 760px;
+		}
+	}
+}
+
+
+.modal-title, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h1 {
+	font-size: 18px;
+	
+}
+
+.modal-content, .moodle-dialogue-base .moodle-dialogue-wrap.moodle-dialogue-content {
+	border-color: $theme-border-color;
+}
+
+
+/* Course Info  Page */
+#page-course-info {
+	.course-item-inner {
+		display: flex;
+		flex-direction: row;
+		//flex-wrap: wrap;
+	}
+	.course-thumb-holder {
+		max-width: 400px;
+		margin-right: 1.5rem;
+		//margin-bottom: 1.5rem;
+		img {
+			max-width: 100%;
+			height: auto;
+			@include border-radius(0.25rem);
+		}
+	}
+	.course-content-wrapper {
+		flex-grow: 1;
+		.course-title {
+			font-size: 1.25rem;
+			a {
+				color: $theme-text-color-secondary;
+			    &:hover {
+				    color: $theme-text-color-primary;
+			    }
+			}
+			
+		}
+		.course-summary {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+
+#page-navbar .breadcrumb {
+	border: none !important;
+}
+
+@media (max-width: 767.98px) {
+	
+	#page-header .card .card-body {
+	    padding: 1.25rem;
+	}
+	
+}
+
+/* Moodle 4.x */
+
+.modal.show .modal-dialog {
+	margin-top: 50px;
+}

@@ -1,0 +1,56 @@
+{{#usebenefits}}
+
+<div class="benefits-section">
+	{{#benefitstitle}}
+        <h2 class="benefits-title">{{{benefitstitle}}}</h2>
+    {{/benefitstitle}}
+    <div id="topBorder">
+    </div>
+    <div class="container">
+	    <div class="row">
+		    {{#benefits}}
+			    {{#hasbenefit}}
+			    <div class="item col-lg-4 col-12">
+				    <div class="item-inner">
+					    {{#hasinternet}}
+					        {{^usebenefitimage}}
+						    {{#benefiticon}}
+			                <div class="icon-holder text-center">
+			                    <i class="material-icons">{{{benefiticon}}}</i>              
+			                </div><!--//icon-->
+			                {{/benefiticon}}
+			                {{/usebenefitimage}}
+			                
+			                {{#usebenefitimage}}
+			                {{#benefitimage}}
+			                <div class="image-holder text-center">
+			                    <img src="{{{benefitimage}}}" alt="image">             
+			                </div><!--//icon-->
+			                {{/benefitimage}}
+			                {{/usebenefitimage}}
+		                {{/hasinternet}}
+		                <div class="item-content text-center">
+		                    <h3 class="item-title">{{{benefittitle}}}</h3>
+		                    {{#benefitcontent}}
+		                    <div class="item-desc">{{{benefitcontent}}}</div>  
+		                    {{/benefitcontent}}
+		                </div><!--//content-->    
+				    </div><!--//item-inner-->           
+	            </div><!--/item-->
+	            {{/hasbenefit}}
+            {{/benefits}}
+	    </div><!--//row-->
+	    
+	    {{#benefitsbuttontext}}
+	    <div class="text-center mb-3">
+		    {{#benefitsbuttonurl}}<a class="btn btn-cta theme-btn-secondary" href="{{{benefitsbuttonurl}}}" {{#benefitsbuttonurlopennew}}target="_blank"{{/benefitsbuttonurlopennew}}>{{/benefitsbuttonurl}}
+			    {{{benefitsbuttontext}}}
+			{{#benefitsbuttonurl}}</a>{{/benefitsbuttonurl}}
+	    </div>
+	    {{/benefitsbuttontext}}
+	    
+	    
+    </div><!--//container-->
+    
+</div><!--//benefits-section-->
+{{/usebenefits}}

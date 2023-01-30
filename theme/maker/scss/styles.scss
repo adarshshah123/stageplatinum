@@ -1,0 +1,551 @@
+/*!
+ * Moodle Theme Maker(https://elearning.3rdwavemedia.com)
+ * Version: v6.0
+ * Author: 3rd Wave Media
+ * Copyright @ 3rd Wave Media Ltd.
+ * License info: (https://elearning.3rdwavemedia.com/licenses)
+ */
+ 
+/*
+/* Maker Custom Settings (defined in settings.php and lib.php) 
+*/
+
+
+$pagefont: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$headingfont: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$fp-hero-height: 460px !default;
+$fp-block-height: 200px !default;
+$fp-promo-height: 360px !default;
+$fp-testimonial-height: 340px !default;
+$course-header-image-height: 360px !default;
+
+
+@import "theme/mixins";
+@import "theme/base";
+@import "theme/header";
+@import "theme/footer";
+@import "theme/frontpage";
+@import "theme/loginpage";
+@import "theme/modal";
+@import "theme/moodle";
+@import "theme/blocks";
+@import "theme/responsive";
+@import "theme/staticpage";
+@import "theme/courseformat";
+
+// PLATINUM EDIT FrOM 3.9.16
+// FROM Settings in Theme
+/*This disables copy and pasting within the reading assignments (Page Resource)*/
+#page-mod-page-view #region-main {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  /*This changes the colors/properties of the reading assignments (Page Resource)*/
+  #page-mod-page-view #region-main {
+    font-size: large;
+  
+    a {
+      font-weight: 600;
+    }
+  }
+  
+  /*This adjusts printing on Chrome and Internet Explorer, that the text should not run off the page, but should end and begin at the appropriate margins (Page Resource)*/
+  #page-mod-page-view #region-main {
+    display: inline;
+  }
+  
+  /*This changes the color of the top bar on the site*/
+  .page-header .top-bar {
+    background: #7e9fb6
+  }
+  
+  /*This changes the properties of the company name (if not using a logo)*/
+  .page-header .branding .site-name {
+    color: #2b343e;
+    font-size: 20px;
+    // top: 11px;
+    font-weight: 200;
+  }
+  
+  /*This changes the properties of the background behind the logo/company name (the second bar from the top).*/
+  .page-header .branding {
+    background: #f2f5f7;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: auto;
+  }
+  
+  /*This adjusts the placement of the three lines used to toggle the side navigation bar (it was necessary to adjust once adjusting the bar itself).*/
+  .page-header .drawer-toggle {
+    top: 46px;
+  }
+  
+  /*Changes the Color of the User Menu (on the top right of the site).*/
+  .page-header .utilities .usermenu {
+    color: #2b343e;
+  }
+  
+  .page-header .utilities .usermenu .login > a {
+    color: #2b343e;
+  }
+  
+  .page-header .utilities .usermenu .usertext  {
+    color: #2b343e;
+  }
+  
+  /*This Changes the Background Color of the Box That Surrounds the Course Title on the Course Image, It also changes the properties of the text*/
+  .path-course-view .page-header-wrapper.has-course-header-image .page-context-header {
+    background: rgba(210, 219, 226, 0)
+  }
+  
+  .path-course-view .page-header-wrapper.has-course-header-image .breadcrumb {
+    background: rgba(210, 219, 226, 0)
+  }
+  
+  /*This changes the color of the "Incorrect Username and password" alert displayed to users*/
+  .alert-danger, #page-admin-index .adminerror {
+    color: #2b343e;
+    background-color: rgba(210, 219, 226, 0.30);
+    border-color: rgba(210, 219, 226, 0.30)
+  }
+  
+  /* Changes Properties of the Navigation Bar; Including Font Color/Widget Color/ etc.*/
+  #nav-drawer .list-group-item.active {
+    color: #2b343e;
+    font-weight: normal;
+    background: rgba(210, 219, 226, 0.3)
+  }
+  
+  .fa-mortar-board:before, .fa-graduation-cap:before {
+    color: #6D727C
+  }
+  
+  .fa-table:before {
+    color: #6D727C
+  }
+  
+  .fa-shield:before {
+    color: #6D727C
+  }
+  
+  .fa-calendar:before {
+    color: #6D727C
+  }
+  
+  .fa-users:before {
+    color: #6D727C
+  }
+  
+  .fa-check-square-o:before {
+    color: #6D727C
+  }
+  
+  .fa-home:before {
+    color: #6D727C
+  }
+  
+  /*This changes the size of the course title displayed on the course image within the course*/
+  .path-course-view .page-header-wrapper.has-course-header-image .page-context-header .page-header-headings h1 {
+    font-size: large;
+  }
+  
+  /*Changes Properties to Benefits (Course Features) Section*/
+  .benefits-section {
+    background-image: linear-gradient(to right, #faf9fa 100%, #faf9fa 100%);
+    background: #faf9fa;
+  
+    .benefits-title div {
+      font-family: avenir-heavy-85;
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: 1.9px;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-align: center;
+    }
+  
+    .item {
+      color: #2b343e;
+  
+      .item-title, h3 {
+        font-family: roboto-bold;
+        color: #2b343e;
+        font-size: 20px;
+        letter-spacing: .05em;
+      }
+      .item-desc {
+        font-family: roboto-thin,roboto,sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        color: rgb(30, 45, 59);
+      }
+    }
+  }
+  
+  /*This removes the tinting displayed by default on the home page image*/
+  .hero-slider-mask {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .0) 0%, rgba(0, 0, 0, .0) 0%)
+  }
+  
+  
+  /*Enrollment Timer Property Changes*/
+  .block_enrolmenttimer .content .text-wrapper .text-desc {
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  .block_enrolmenttimer .content .text-wrapper .sub-text {
+    font-size: 13px;
+    text-align: left;
+  }
+  
+  /*Changes Properties of Headline displayed on Home Page Image (we are not currently using anymore*/
+  .hero-section .headline {
+    color: #2b343e;
+    font-size: 30px;
+    font-weight: 200;
+  }
+  
+  .auth-blocks-wrapper {
+    background: #f1f5f7
+  }
+  
+  /*Changes Properties of Call to Action Block (the Mission Statement Block)*/
+  .cta-section .cta-section-inner  {
+    color: #2b343e;
+    padding: 60px;
+    font-weight: 300;
+  }
+  
+  /*Changes Color of the Activity Navigation Links*/
+  .activity-navigation #prev-activity-link {
+    color: rgb(85, 122, 149);
+  }
+  
+  .activity-navigation #next-activity-link {
+    color: rgb(85, 122, 149);
+  }
+  
+  .footer-block {
+    color: #2b343e;
+  }
+  
+  .footer-block-title {
+    color: #2b343e;
+  }
+  
+  /*Changes the Dimensions of the Call to Action Box*/
+  a.theme-btn-cta, .theme-btn-cta {
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+  
+  /*Changes the Font Weight of the Featured Courses Title*/
+  .featured-section {
+    margin-top: unset;
+  
+    .section-title {
+      font-weight: 300;
+      margin-bottom: 8px;
+  
+      div {
+        font-family: avenir-heavy-85;
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: 1.9px;
+        text-transform: uppercase;
+      }
+    }
+  
+    .item-desc {
+      font-size: 15px;
+      font-weight: 400;
+      color: #2b343e;
+    }
+  }
+  
+  /*This hides the header from all pages when they are printed off the site. This was done to facilitate printing*/
+  @media print {
+    .page-header {
+      display: none;
+    }
+  }
+  
+  /*Changes Properties and Font-Size of Book Resource*/
+  #page-mod-book-view #region-main {
+    font-size: large;
+  
+    a {
+      font-weight: 500;
+    }
+  }
+  
+  /*Disables Copy and Paste for Book Resource*/
+  #page-mod-book-view #region-main {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  #page-mod-book-print #page-content {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  /*Adds Page Numbers to Printed Pages on All Resources Printed From Site*/
+  @media print {
+    #print-foot {
+      display: block;
+      position: fixed;
+    }
+  
+    #print-foot:after {
+      content: counter(page);
+      counter-increment: page;
+    }
+  }
+  
+  /*Printing Copyright on Every Page*/
+  @media screen {
+    div.copyrightprint {
+      display: none;
+    }
+  }
+  
+  div.copyrightprint {
+    position: absolute;
+    left: 37%;
+  }
+  
+  @media print {
+    div.copyrightprint {
+      display: block;
+      position: fixed;
+      bottom: 0;
+    }
+  }
+  
+  /*Fixing Printing Margins on Chrome*/
+  @page {
+    size: letter;
+    margin-top: 11mm;
+    margin-bottom: 12mm
+  }
+  
+  /*Changes Property of Quiz Feedback Cells*/
+  #page-mod-quiz-index #region-main {
+    td.cell.c0 {
+      text-align: left !important;
+    }
+  
+    th.header.c0 {
+      text-align: left !important;
+    }
+  }
+  
+  ul {
+    margin-left: 0.5em;
+  }
+  
+  // OTHER PLATINUM EDITS
+  .activity-navigation .row {
+    align-items: center;
+  }
+  
+  .activity-navigation #prev-activity-link, .activity-navigation #next-activity-link {
+    white-space: pre-wrap;
+  }
+  
+  div#nav-drawer {
+    padding-top: 106px;
+  }
+  
+  /* div.page-header-wrapper {
+    padding-top: 125px;
+  } */
+  
+  /* div.hero-section {
+    padding-top: 105px;
+  } */
+  
+  /* div.hero-slider-wrapper {
+    padding-top: 105px;
+  } */
+  
+  /* div.cta-section {
+    padding-top: 105px;
+  } */
+  
+  .custom-select {
+    height: auto;
+  }
+  
+  .page-header .utilities {
+    .usermenu .usertext {
+      color: #2b343e;
+    }
+  
+    .popover-region-notifications .popover-region-toggle > .icon {
+      color: #2b343e;
+    }
+  
+    .dropdown a.dropdown-toggle {
+      color: #2b343e;
+    }
+  }
+  
+  /* PPS-87 Change mission statement font to Avenir and add yellow line */
+  #topBorder {
+    border-top: 10px #EDCD1F solid;
+    width: 116px;
+    margin: 0 auto 60px;
+    height: 2rem;
+  }
+  
+  div.cta-section h2.cta-title div {
+    font-family: avenir-heavy-85;
+    color: #2b343e;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+  }
+  
+  /* PPS-88 Change book resource title link sizes */
+  #page-mod-book-print {
+    font-size: 1.3em;
+  }
+  
+  /* PPS-90 Change section title to Avenir font and add yellow line */
+  #botBorder {
+    border-top: 10px #EDCD1F solid;
+    width: 116px;
+    margin: 0 auto 60px;
+    height: 2rem;
+  }
+  
+  
+  .top-bar-inner .special-wrapper {
+    padding-left: 0px !important;
+  }
+  
+  .branding .branding-inner .site-logo {
+    max-height: 96px;
+    height: auto;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .que.multichoice .answer {
+    div.r0 {
+      display: block;
+  
+      label div {
+        display: inline;
+  
+        p {
+          display: inline;
+        }
+      }
+  
+      .specificfeedback p {
+        display: inline;
+      }
+    }
+  
+    div.r1 {
+      display: block;
+  
+      label div {
+        display: inline;
+  
+        p {
+          display: inline;
+        }
+      }
+  
+      .specificfeedback p {
+        display: inline;
+      }
+    }
+  }
+  
+  #page-admin-theme-index [method="post"] button.btn-secondary {
+    margin-bottom: 4px;
+  }
+  #page-login-signup .page-wrapper{
+      padding-top: 20px;
+  }
+// PLATINUM EDIT FrOM 3.9.16 by Adarsh
+
+.benefits-section .benefits-title div {
+    font-family: avenir-heavy-85;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#topBorder {
+    border-top: 10px #edcd1f solid;
+    width: 116px;
+    margin: 0 auto 60px;
+    height: 2rem;
+}
+.col-lg-4 {
+    flex: 0 0 49.3333333333%;
+    max-width: 49.3333333333%;
+}
+.benefits-section .item:first-child {
+    border-right: 1px solid #2b343e;
+}
+
+.featured-section .section-title div {
+    font-family: avenir-heavy-85;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+}
+
+#botBorder {
+    border-top: 10px #edcd1f solid;
+    width: 116px;
+    margin: 0 auto 60px;
+    height: 2rem;
+}
+
+.benefits-section .item .item-desc {
+    font-family: roboto-thin,roboto,sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .05em;
+    color: #1e2d3b;
+}
+.benefits-section .item .item-title, .benefits-section .item h3 {
+    font-family: roboto-bold;
+    color: #2b343e;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .05em;
+}
+.benefits-section .item .item-desc p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+#page-content #block-region-side-pre {
+  display: none;
+}
+
+// PLATINUM EDIT FrOM 3.9.16 by Adarsh End

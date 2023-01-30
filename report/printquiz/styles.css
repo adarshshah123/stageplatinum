@@ -1,0 +1,43 @@
+#page-report-printquiz-index .outcome {
+    display:none;
+}
+
+#page-report-printquiz-index .incorrect i,
+#page-report-printquiz-index .correct i {
+    display:none;
+}
+
+#page-report-printquiz-index .info .state, .info .grade,
+#page-report-printquiz-index .info .questionflag,
+#page-report-printquiz-index .info .editquestion {
+    display: none;
+}
+
+#page-report-printquiz-index .submitbtns {
+    display:none;
+}
+
+
+#page-report-printquiz-index #nav-drawer,
+#page-report-printquiz-index .navbar,
+#page-report-printquiz-index #page-footer,
+#page-report-printquiz-index .activity-navigation {
+    display:none;
+}
+
+#page-report-printquiz-index {
+    margin-left: 0;
+}
+
+#page-report-printquiz-index .print-link {
+    position: fixed; /* or absolute */
+    top: 20px;
+    left: 50%;
+}
+
+@media print
+{
+    .print-link {
+        display: none !important;
+    }
+}
