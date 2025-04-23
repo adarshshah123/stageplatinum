@@ -1,0 +1,20 @@
+{{#usefootersocial}}
+<div class="footer-social-media">
+{{#footersocialsectiontitle}}
+<h5 class="mb-3 font-weight-normal footer-social-media-title">{{{footersocialsectiontitle}}}</h5>
+{{/footersocialsectiontitle}}
+<ul class="social-media-list list-inline" >
+	
+	{{#socialmedia}}
+	    {{#haslink}}
+	    <li class="list-inline-item">
+		    <a href="{{{haslink}}}" title = "{{{haslink}}}" alt="{{{haslink}}}" target="_blank">
+			    <i class="fa fa-{{{linkicon}}}" aria-hidden="true"></i>
+			</a>
+		</li>
+		{{/haslink}}
+	{{/socialmedia}}
+	
+</ul><!--//social-media-list-->
+</div><!--//footer-social-media-->
+{{/usefootersocial}}

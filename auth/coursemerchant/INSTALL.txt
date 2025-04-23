@@ -1,0 +1,29 @@
+Installation Instructions
+
+There are two Course Merchant related Modules in the attached zip.  Each module should be installed separately.  The modules may be identified by the directory name:
+
+/local - this folder contains the Course Merchant enrollment Module.  This module must be installed first.
+
+/auth - this folder contains a simple SSO module that allows Course Merchant and Moodle to allow a user to pass between the two applications without having to re-enter their credentials.
+
+Step 1.  Install the Course Merchant Enrollment Module (found in the folder /local)
+
+1. Copy 'coursemerchantrpc' to <moodle-dir>/local (thus creating <moodle-dir>/local/coursemerchantrpc).
+2. Login to Moodle as an admin
+2.1 Go to Site Administration / Notifications and proceed with the installation when asked.
+2.2 You should be prompted to edit new settings (if not, jump to 2.3)
+2.2.1 Put a Check/Tick in 'Enable Course Merchant RPC Integration' to enable the plugin
+2.2.2 Set username to a Moodle admin user, either accept the default 'admin' or create a new admin account for the module, e.g. coursemerchantws
+2.3 Go to Site Administration / Plugins / Local Plugins / Course Merchant / RPC Integration Settings
+2.3.1 The plugin generates a new token automatically when first installed, copy the token and enter this into the Course Merchant Moodle settings in your Course Merchant storeadmin.  If you do not have access to your Course Merchant storeadmin, please send the token to your Course Merchant contact.
+
+Step 2.  Installing the auth plugin 
+
+1. Copy the directory 'coursemerchant' from 'moodle/auth' to your '<moodle-dir>/auth' directory (creating <moodle-dir>/auth/coursemerchant).
+2. Go to Site Administration / Notifications and proceed with the installation when asked.
+3. Enable the plugin from 'Site Administration / Plugins / Authentication / Manage authentication' - click the 'eye' icon so that it is opened, and the SSO module is visible.
+4. Edit the plugin's settings 'Site Administration / Plugins / Authentication / Course Merchant SSO'
+5. For the plugin's 'SSO Key' setting, set that to the same as the 'Course Merchant API Token' used in the local module (the token generated at step 2.3.1 when installing the Course Merchant Enrollment module)
+6. For the plugin's 'Course Merchant Base URL' setting, set that to the URL of the Course Merchant store, which you can obtain from your Course Merchant contact.
+
+Questions?  Please email support@coursemerchant.com

@@ -1,0 +1,33 @@
+{{#usedropdown}}
+<div class="mega-dropdown dropdown mr-3">
+	<a class="dropdown-toggle mega-dropdown-toggle" href="#" role="button" id="mega-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="mega-dropdown-icon-holder"><img class="mega-dropdown-icon" src="{{{dropdownicon}}}" alt="icon"></span>{{#dropdownname}}<span class="d-none d-lg-inline ml-2 mega-dropdown-name">{{{dropdownname}}}</span>{{/dropdownname}}</a>
+	<div class="dropdown-menu mega-dropdown-menu p-4" aria-labelledby="mega-dropdown-toggle">
+	    <div class="container">
+		    
+		    {{#dropdowncontentheading}}
+            <h4 class="mega-dropdown-heading mb-4">{{{dropdowncontentheading}}}</h4>               
+		    {{/dropdowncontentheading}}
+		    
+		    <ul class="list-unstyled mobile-column-1 columns-{{#dropdowncolnumber}}{{{dropdowncolnumber}}}{{/dropdowncolnumber}}">
+			    {{#dropdownmenuitems}}
+			    {{#hasmenuitem}}			    
+			    <li class="nav-item">
+				    {{#menuitemurl}}<a class="nav-link" href="{{{menuitemurl}}}" {{#urlopennew}}target="_blank"{{/urlopennew}}>{{/menuitemurl}} 
+					                {{{menuitemtitle}}}
+				    {{#menuitemurl}}</a>{{/menuitemurl}} 
+				</li>
+			    {{/hasmenuitem}}
+			    {{/dropdownmenuitems}}
+		    </ul>		    
+            
+            {{#dropdownbuttontext}}
+		    {{#dropdownbuttonurl}}<a class="mega-dropdown-cta btn btn-primary" href="{{{dropdownbuttonurl}}}" {{#dropdownbuttonurlopennew}}target="_blank"{{/dropdownbuttonurlopennew}}>{{/dropdownbuttonurl}}
+			    {{{dropdownbuttontext}}}
+			{{#dropdownbuttonurl}}</a>{{/dropdownbuttonurl}}
+		    {{/dropdownbuttontext}}
+
+	    </div><!--//container-->
+	</div>
+</div><!--//mega-dropdown-container-->
+{{/usedropdown}}
