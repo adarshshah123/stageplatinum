@@ -1070,6 +1070,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
     
     public function fp_benefits() {
         global $PAGE;
+        // PLATINUM EDIT
+        $benefitstitle = (empty($PAGE->theme->settings->benefitstitle)) ? false : format_text($PAGE->theme->settings->benefitstitle);
+        // END PLATINUM EDIT
         $hasinternet = $PAGE->theme->settings->hasinternet == 1;
         $usebenefits = $PAGE->theme->settings->usebenefits == 1;
         
@@ -1119,7 +1122,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
 
         $fp_benefits = [
-
+        // PLATINUM EDIT
+        'benefitstitle' => $benefitstitle,
+        // END PLATINUM EDIT
         'usebenefits' => $usebenefits,
         'hasinternet' => $hasinternet,
         

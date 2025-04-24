@@ -929,4 +929,11 @@ $string['ipadretinaicondesc'] = 'Image Name: apple-touch-icon-167x167.png | Imag
 
 $string['hasinternet'] = 'Has Internet Connection';
 $string['hasinternetdesc'] = 'Maker theme needs an external internet connection to use Google fonts and Material Design icons. Uncheck this box if you have to run your Moodle site without access to the internet (eg. your Moodle site runs on a restricted internal intranet).' ;                                                                     
+// PLATINUM EDIT
+$string['benefitstitleheader'] = 'Benefits Title Header';
+$string['benefitstitleheaderdesc'] = 'Enter the settings for the benefits title';
+$string['benefitstitle'] = 'Benefits Title';
+$string['benefitstitledesc'] = 'The title that should appear above the listed benefits';
+
+$string['printquiz'] = 'View printable quiz';                                                                    
 

@@ -54,7 +54,24 @@
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
     
-    
+    // PLATINUM EDIT
+    // BENEFIT TITLE HEADER
+    $name = 'theme_maker/benefittsitleheader';
+    $heading = get_string('benefitstitleheader', 'theme_maker');
+    $information = get_string('benefitstitleheaderdesc', 'theme_maker');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
+    // BENEFIT TITLE TEXT
+    $name = 'theme_maker/benefitstitle';
+    $title = get_string('benefitstitle', 'theme_maker');
+    $description = get_string('benefitstitle', 'theme_maker');
+    $default = 'Our Incredible Features';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // END PLATINUM EDIT
     
     // Benefit 1
     

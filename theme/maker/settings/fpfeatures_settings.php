@@ -45,6 +45,9 @@
 	        '460px' => '460px',
 		    '480px' => '480px',
 		    '500px' => '500px',
+            '550px' => '550px',
+            '580px' => '580px',
+            '600px' => '600px',
 	    );
 	$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 	$setting->set_updatedcallback('theme_reset_all_caches');
