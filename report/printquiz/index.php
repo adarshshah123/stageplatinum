@@ -58,9 +58,9 @@ $PAGE->set_title($attemptobj->get_quiz_name());
 $PAGE->set_heading($attemptobj->get_course()->fullname);
 
 $slots = $attemptobj->get_slots();
-
+$summarydata = new mod_quiz\output\attempt_summary_information([]);
 $output = $PAGE->get_renderer('mod_quiz');
-echo $output->review_page($attemptobj, $slots, 0, true, false, $options, []);
+echo $output->review_page($attemptobj, $slots, 0, true, false, $options, $summarydata);
 echo html_writer::div(
     html_writer::link(
         'javascript:window.print()',
