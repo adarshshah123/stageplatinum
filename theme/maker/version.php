@@ -16,7 +16,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024100711;
+$plugin->version   = 2024100712;
 $plugin->release  = 'Moodle 4.5 Maker v14.0';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->requires  = 2024041600; 

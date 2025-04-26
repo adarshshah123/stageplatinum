@@ -44,6 +44,12 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
+/* Start Removing Home button from the front page when the user is not logged in By Adarsh */
+if (!isloggedin()) {
+    unset($primarymenu['moremenu']['nodearray']);
+}
+/* Start Removing Home button from the front page when the user is not logged in By Adarsh */
+
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 

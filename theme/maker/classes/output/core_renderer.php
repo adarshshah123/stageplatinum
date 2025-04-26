@@ -2928,18 +2928,41 @@ class core_renderer extends \theme_boost\output\core_renderer {
 	        
 	        
 	        if ($courseimage) {
-		        $html = html_writer::start_div('course-header-bg');
+                
+                /* Edit code start  by Adarsh for hiding course image from activity*/
+                $activity_url = $_SERVER['REQUEST_URI'];
+                if (strpos($activity_url, 'mod') !== false) {
+
+                    $html = html_writer::start_div('activity_image');
+
+                    $html .= html_writer::end_div();
+                } else {
+                    $html = html_writer::start_div('course-header-bg');
+                    $html .= html_writer::start_div('course-header-image', array(
+                        'style' => 'background-image: url("' . $courseimage . '"); -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover; background-repeat: no-repeat; 
+                        background-position: center; width:100%; height: 100%;'
+                    ));
+                    $html .= html_writer::end_div(); // End has-course-image inline style div.
+
+                    $html .= html_writer::start_div('mask');
+
+                    $html .= html_writer::end_div(); //End mask div
+
+                    $html .= html_writer::end_div();
+                }
+                /* Edit code End  by Adarsh for hiding course image from activity*/
+		        // $html = html_writer::start_div('course-header-bg');
 	        
-	            $html .= html_writer::start_div('course-header-image', array(
-	                'style' => 'background-image: url("' . $courseimage . '"); -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover; background-repeat: no-repeat;  background-position: center; width:100%; height: 100%;'
-	            ));
-	            $html .= html_writer::end_div(); // End has-course-image inline style div.
+	            // $html .= html_writer::start_div('course-header-image', array(
+	            //     'style' => 'background-image: url("' . $courseimage . '"); -webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover; background-repeat: no-repeat;  background-position: center; width:100%; height: 100%;'
+	            // ));
+	            // $html .= html_writer::end_div(); // End has-course-image inline style div.
 	            
-	            $html .= html_writer::start_div('mask');
+	            // $html .= html_writer::start_div('mask');
 	            
-	            $html .= html_writer::end_div(); //End mask div
+	            // $html .= html_writer::end_div(); //End mask div
 	            
-	            $html .= html_writer::end_div(); 
+	            // $html .= html_writer::end_div(); 
 	            
 	        } elseif (theme_maker_get_setting('defaultcourseimage')) {
 		        $html = html_writer::start_div('course-header-bg');
@@ -3007,8 +3030,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $defaultcourseimage = (empty($PAGE->theme->setting_file_url('defaultcourseimage', 'defaultcourseimage'))) ? false : $PAGE->theme->setting_file_url('defaultcourseimage', 'defaultcourseimage');
         
         if (theme_maker_get_setting('usecourseheaderimage') && ( $courseimage || $defaultcourseimage ) ) {
-	        
-	        return "has-course-header-image";
+	         /* Edit code start  by Adarsh for add class*/
+             $activity_url = $_SERVER['REQUEST_URI'];
+             if (strpos($activity_url, 'mod') !== false) {
+                 return "has-course-header-image  activity";
+             } else {
+                 return "has-course-header-image ";
+             }
+             /* Edit code End  by Adarsh for add class*/
+
+            /* original code*/
+	        // return "has-course-header-image";
             
         } 
  
